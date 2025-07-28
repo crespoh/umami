@@ -15,4 +15,4 @@ services:
       - key: DISABLE_TELEMETRY
         value: "true"
     autoDeploy: true
-    region: Singapore (Southeast Asia)  # or change to your preferred region
+    region: Singapore  # or change to your preferred region
