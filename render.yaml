@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: umami-web
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false  # set in Render Dashboard
+      - key: HASH_SALT
+        sync: false  # set in Render Dashboard
+      - key: NEXTAUTH_SECRET
+        sync: false  # set in Render Dashboard
+      - key: DISABLE_TELEMETRY
+        value: "true"
+    autoDeploy: true
+    region: Singapore (Southeast Asia)  # or change to your preferred region
