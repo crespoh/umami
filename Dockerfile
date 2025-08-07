@@ -24,6 +24,9 @@ RUN pnpm install
 # Copy rest of the app
 COPY . .
 
+# Prevent DB check that breaks build
+ENV SKIP_DB_CHECK=true
+
 RUN echo "BUILD: DATABASE_URL=$DATABASE_URL"
 # Build the app (now that env vars are visible)
 RUN pnpm build
